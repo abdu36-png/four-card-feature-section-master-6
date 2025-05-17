@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --clr-primary-Red:hsl(0, 78%, 62%);
+    --clr-secondary-cyan: hsl(180, 62%, 55%);
+    --clr-third-Orange: hsl(34, 97%, 64%);
+    --clr-fourth-Blue: hsl(212, 86%, 64%);
+
+    --clr-neutral-Grey-500: hsl(234, 12%, 34%);
+    --clr-neutral-Grey-400: hsl(212, 6%, 44%);
+    --clr-neutral-White: hsl(0, 0%, 100%);
+
+    --ff:'Poppins',sans-serif;
+    --fw-normal: 200;
+    --fw-medium: 400;
+    --fw-large: 600;
+    --fs: 15px;
+}
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+  font-family: var(--ff);
+  background-color: var(--clr-neutral-White);
+  font-size: var(--fs);
+  
+  
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+.wrapper{
+  display: grid;
+  gap: 1.5rem;
+ 
+}
+header{
+  display: grid;
+  justify-self: center;
+  gap: 0.3rem;
+}
+h1{
+  color: var(--clr-neutral-Grey-500);
+  font-size: 0.9375rem;
+}
+p{
+  color: var(--clr-neutral-Grey-400);
+}
+#title-first{
+  display: block;
+  color: var(--clr-neutral-Grey-400);
+  font-weight: var(--fw-normal);
+}
+.title {
+  font-weight: var(--fw-large);
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.title-subtitle{
+  padding: 0.8rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+section{
+  padding: 7rem;
+  width: 20rem;
+  position: relative;
+  box-shadow:  0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0.28rem;
+}
+section.First{
+  border-top: 0.2rem solid var(--clr-secondary-cyan);
+}
+section.second{
+    border-top: 0.2rem solid var(--clr-primary-Red);
+}
+section.third{
+    border-top: 0.2rem solid var(--clr-third-Orange);
+}
+section.fourth{
+    border-top: 0.2rem solid var(--clr-fourth-Blue);
+}
+section h1 {
+    margin: 0.1rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 1.2rem;
+}
+section p{
+  position: absolute;
+  top: 3.3rem;
+  left: 1.3rem;
+}
+section img{
+  position: absolute;
+  right: 1.3rem;
+  bottom: 2rem;
+}
+article{
+  display: grid;
+  gap: 2rem;
+}
+footer{
+  margin-top: 0.5rem;
+}
+@media(min-width:600px) {
+article{
+    grid-template-areas:
+    "... two ...."
+    "one two four"
+    "one three four"
+    "... three ...." 
+    ;
+  }
+section.First{
+  grid-area: one;
+}
+section.second{
+    grid-area: two;
+}
+section.third{
+    grid-area: three;
+}
+section.fourth{
+    grid-area: four;
+}
+#title-second{
+  display: block;
+}
+}
